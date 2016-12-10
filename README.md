@@ -1,6 +1,8 @@
 # ECCO-cloud
 ECCO (MITgcm) in the cloud v1.0
 
+[![DOI](https://zenodo.org/badge/76081884.svg)](https://zenodo.org/badge/latestdoi/76081884)
+
 This repository serves as instructions and pointers to run ECCO in the cloud.  The tools and snapshots made available allow a user to easily spin up a cluster of machines in AWS and attach then to an EBS volume containing ECCO in a ready to run state.  The hope is that researchers without access to physical clusters as well as researchers without the time or skills to configure a cluster will still have access to software that can help drive Ocean Science forward.
 
 Requirements:
