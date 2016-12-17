@@ -28,5 +28,7 @@ Intructions:
 
 Note that it is unclear that there is any benefit to running the above software with more than 96 cpu's.
 
+If you have questions please contact us at (mark at camclimate.org).
+
 
 
