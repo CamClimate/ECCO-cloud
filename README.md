@@ -16,7 +16,7 @@ Intructions:
 ```
 git clone https://github.com/CamClimate/ECCO-cloud
 ```
-4. Copy the ‘ECCO-cloud/config' file to a directory dedicated to starcluster by typing the following commands:
+4. Create the startcluster directory and copy the ‘ECCO-cloud/config' file into it by typing the following commands:
 ```
 mkdir .starcluster
 cp ECCO-cloud/config .starcluster/
