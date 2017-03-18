@@ -22,11 +22,11 @@ mkdir starcluster
 cp ECCO-cloud/config starcluster/
 ```
 * Edit the 'starcluster/config' file, e.g. using vi, in order to replace the following place holders:
-..* YOUR_AWS_ACCESS_KEY_ID    with your AWS access key ID (found under "My Sercurity Credentials" under the menu with your name in AWS)
-..* YOUR_AWS_SECRET_ACCESS_KEY_ID    with your AWS secret access key ID (downloaded at the time of creation of your access key)
-..* YOUR_AWS_USER_ID    with your AWS user ID (found under "My Account" under the menu with your name in AWS)
-..* YOUR_VOLUME_ID    with the volume ID corresponding to the EBS volume created from snap-de1b5169 in the first step.
-..* yourclusterkey    with an original name of your choosing (all 3 instances)
+  * YOUR_AWS_ACCESS_KEY_ID    with your AWS access key ID (found under "My Sercurity Credentials" under the menu with your name in AWS)
+  * YOUR_AWS_SECRET_ACCESS_KEY_ID    with your AWS secret access key ID (downloaded at the time of creation of your access key)
+  * YOUR_AWS_USER_ID    with your AWS user ID (found under "My Account" under the menu with your name in AWS)
+  * YOUR_VOLUME_ID    with the volume ID corresponding to the EBS volume created from snap-de1b5169 in the first step.
+  * yourclusterkey    with an original name of your choosing (all 3 instances)
 * Install the starcluster software (see http://star.mit.edu/cluster/) by typing:
   sudo easy_install StarCluster
 * Generate the necessary key pair by substituting “yourclusterkey” with the name 
