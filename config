@@ -22,10 +22,10 @@ DEFAULT_TEMPLATE=smallcluster
 # This is the AWS credentials section (required).
 # These settings apply to all clusters
 # replace these with your AWS keys
-AWS_ACCESS_KEY_ID = ***
-AWS_SECRET_ACCESS_KEY = ***
+AWS_ACCESS_KEY_ID = YOUR_AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY = YOUR_AWS_SECRET_ACCESS_KEY_ID
 # replace this with your account number
-AWS_USER_ID= ***
+AWS_USER_ID= YOUR_AWS_USER_ID
 # Uncomment to specify a different Amazon AWS region  (OPTIONAL)
 # (defaults to us-east-1 if not specified)
 # NOTE: AMIs have to be migrated!
@@ -46,8 +46,8 @@ AWS_USER_ID= ***
 # Sections starting with "key" define your keypairs. See "starcluster createkey
 # --help" for instructions on how to create a new keypair. Section name should
 # match your key name e.g.:
-[keypair starcluster]
-KEY_LOCATION=***
+[keypair yourclusterkey]
+KEY_LOCATION=~/.ssh/yourclusterkey.rsa
 
 # You can of course have multiple keypair sections
 # [key myotherkey]
@@ -72,7 +72,7 @@ KEY_LOCATION=***
 
 [cluster smallcluster]
 # change this to the name of one of the keypair sections defined above
-KEYNAME = starcluster
+KEYNAME = yourclusterkey
 
 # number of ec2 instances to launch
 CLUSTER_SIZE = 3
@@ -185,7 +185,7 @@ VOLUMES = mitgcm
 # Sections starting with "volume" define your EBS volumes
 [volume mitgcm]
 # attach vol-d4ad3845 to /mitgcm on master node and NFS-shre to worker nodes
-VOLUME_ID = ***
+VOLUME_ID = YOUR_VOLUME_ID
 MOUNT_PATH = /mitgcm
 
 # Same volume as above, but mounts to different location
