@@ -13,7 +13,8 @@ Intructions:
 * In your amazon account, create an EBS volume from the public snapshot: snap-de1b5169.  This is a storage volume that contains the software and inputs needed to run ECCO. 
 * Launch a t2.micro instance with the Starcluster software in order to launch and terminate your cluster.  We suggest using the starcluster community AMI with ubuntu 16.04 with id: ami-040b6113.
 * Copy the ‘ECCO-cloud/config' file to a directory dedicated to starcluster by typing the following commands:
-```mkdir .starcluster/
+```
+mkdir .starcluster/
 cp ECCO-cloud/config .starcluster/
 ```
 * Edit the '.starcluster/config' file, e.g. using vi, to replace:
