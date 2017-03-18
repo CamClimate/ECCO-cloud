@@ -72,7 +72,7 @@ tail STDOUT.0000' should show
 starcluster terminate myfirstcluster
 ```
 
-Note: distinct cluster name (‘yourfirstcluster’ above) and key name (`yourclusterkey’) may be needed each time
+Note: distinct cluster name (‘myfirstcluster’ above) and key name (`yourclusterkey’) may be needed each time
 Note: it is unclear that there is any benefit to running the above software with more than 96 cpu's.
 
 If you have questions, feedback, or suggestions--please contact us at (mark at camclimate.org).
