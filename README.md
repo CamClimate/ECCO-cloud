@@ -3,22 +3,16 @@ ECCO (MITgcm) in the cloud v1.0
 
 [![DOI](https://zenodo.org/badge/76081884.svg)](https://zenodo.org/badge/latestdoi/76081884)
 
-This repository serves as instructions and pointers to run ECCO in the cloud.  The tools and snapshots 
-made available allow a user to easily spin up a cluster of machines in AWS and attach then to an EBS volume containing ECCO in a ready to run state.  The hope is that researchers without access to physical clusters as well as researchers without the time or skills to configure a cluster will still have access to software that can help drive Ocean Science forward.
+This repository serves as instructions and pointers to run ECCO in the cloud.  The tools and snapshots made available allow a user to easily spin up a cluster of machines in AWS and attach them to an EBS volume containing ECCO in a ready to run state.  The hope is that researchers without access to physical clusters as well as researchers without the time or skills to configure a cluster will still have access to software that can help drive Ocean Science forward.
 
 Requirements:
 * An AWS account (we will extend to support other cloud services in the future)
-* A machine running starcluster (software found here http://star.mit.edu/cluster/). Below we suggest 
-  using an AWS t2.micro instance of “Amazon Linux AMI 2016.09.1 (HVM), SSD Volume Type - ami-9be6f38c”.
+* A machine running starcluster (software found here http://star.mit.edu/cluster/). Below we include instructions for using an AWS t2.micro instance of “Amazon Linux AMI 2016.09.1 (HVM), SSD Volume Type - ami-9be6f38c”.
 
 Intructions:
-* In your amazon account, create an EBS volume from the public snapshot: snap-de1b5169 
-* Launch and connect to a t2.micro instance of the AWS variety (currently “Amazon Linux
-  AMI 2016.09.1 (HVM), SSD Volume Type - ami-9be6f38c”) to boot up the cluster
-* Install git to download the starcluster config file by typing:
-  sudo yum install git
-  git clone https://github.com/CamClimate/ECCO-cloud
-* Copy the ‘ECCO-cloud/config' file to a directory dedicated to starcluster:
+* In your amazon account, create an EBS volume from the public snapshot: snap-de1b5169.  This is a storage volume that contains the software and inputs needed to run ECCO. 
+* Launch a t2.micro instance with the Starcluster software in order to launch and terminate your cluster.  We suggest using the starcluster community AMI with ubuntu 16.04 with id: ami-040b6113.
+* Copy the ‘ECCO-cloud/config' file to a directory dedicated to starcluster by typing the following commands:
   mkdir .starcluster/
   cp ECCO-cloud/config .starcluster/
 * Edit the '.starcluster/config' file, e.g. using vi, to replace:
