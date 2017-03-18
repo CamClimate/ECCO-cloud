@@ -25,10 +25,10 @@ cp ECCO-cloud/config .starcluster/
 ```
 vi .starcluster/config
 ```
-   * YOUR_AWS_ACCESS_KEY_ID    with your AWS access key ID (found under "My Sercurity Credentials" under the menu with your name in AWS)
-   * YOUR_AWS_SECRET_ACCESS_KEY_ID    with your AWS secret access key ID (downloaded at the time of creation of your access key)
-   * YOUR_AWS_USER_ID    with your AWS user ID (found under "My Account" under the menu with your name in AWS)
-   * YOUR_VOLUME_ID    with the volume ID corresponding to the EBS volume created from snap-de1b5169 in the first step.
+   * replace YOUR_AWS_ACCESS_KEY_ID with your AWS access key ID (found under "My Sercurity Credentials" under the menu with your name in AWS)
+   * replace YOUR_AWS_SECRET_ACCESS_KEY_ID with your AWS secret access key ID (downloaded at the time of creation of your access key)
+   * replace YOUR_AWS_USER_ID with your AWS user ID (found under "My Account" under the menu with your name in AWS)
+   * replace YOUR_VOLUME_ID with the volume ID corresponding to the EBS volume created from snap-de1b5169 in the first step.
 6. Generate a key pair by typing the follwing command:
 ```
 starcluster createkey yourclusterkey -o ~/.ssh/yourclusterkey.rsa
