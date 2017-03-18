@@ -35,25 +35,42 @@ starcluster createkey yourclusterkey -o ~/.ssh/yourclusterkey.rsa
 starcluster start -c smallcluster myfirstcluster
 ```
 * Verify in the AWS EC2 console that cluster is now running (master,node001,...,node003)
-* Login to the master node:
-  starcluster sshmaster myfirstcluster
-* change directory to the mounted volume:
-  cd /mitgcm
+* Once it is initialized, login to the master node of your cluster by typing the following command:
+```
+starcluster sshmaster myfirstcluster
+```
+* Change directory to the mounted volume by typing the following command:
+```
+cd /mitgcm
+```
 * Compile and setup the ECCO model run for 96 CPUs by following instructions in Fig. 2 of the
   eccov4.pdf user guide found at http://doi.org/10.5281/zenodo.225777 [Forget, G. (2016). 
   ECCO v4 r2 user guide and model setup. Zenodo. http://doi.org/10.5281/zenodo.225777]
-* Switch user to the startcluster associated user sgeadmin:
-  sudo su - sgeadmin
-* Run ECCO:
-  cd /mitgcm/MITgcm/mysetups/ECCO_v4_r2/run
-  mpiexec -np 96 -host master,node001,node002 ./mitgcmuv &
-* Verify that model is running on master and nodes, e.g., using the 'top' command
-* Keep track of the model run as it progresses by typing 'ls -1 state_2d_set1.0*data' to see 
-  how many of these monthly output files exist; by the end of the 20 year model run there should 
-  be 240 of them; once the model run has completed the command 'tail STDOUT.0000' should show 
-  'PROGRAM MAIN: Execution ended Normally' as the last line
-* Make sure to terminate the cluster once you are done (to stop paying for it!):
-  starcluster terminate yourfirstcluster
+* Switch user to the startcluster associated user sgeadmin by typing the following command:
+```
+sudo su - sgeadmin
+```
+* Run ECCO by typing the following commands:
+```
+cd /mitgcm/MITgcm/mysetups/ECCO_v4_r2/run
+mpiexec -np 96 -host master,node001,node002 ./mitgcmuv &
+```
+* Verify that model is running on master and nodes, e.g., by using the 'top' command
+```
+top
+```
+* Keep track of the model run as it progresses (see how many of the monthly output files exist) by typing the following command:
+```
+ls -1 state_2d_set1.0*data
+```
+* By the end of the 20 year model run there should be 240 monthly output files.  Once the model run has completed, verify that STDOUT.0000 ends with 'PROGRAM MAIN: Execution ended Normally' by typing the following command: 
+```
+tail STDOUT.0000' should show 
+```  
+* Make sure to terminate the cluster once you are done (to stop paying for it!) by typing the following command:
+```
+starcluster terminate yourfirstcluster
+```
 
 Note: distinct cluster name (‘yourfirstcluster’ above) and key name (`yourclusterkey’) may be needed each time
 Note: it is unclear that there is any benefit to running the above software with more than 96 cpu's.
