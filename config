@@ -46,8 +46,8 @@ AWS_USER_ID= YOUR_AWS_USER_ID
 # Sections starting with "key" define your keypairs. See "starcluster createkey
 # --help" for instructions on how to create a new keypair. Section name should
 # match your key name e.g.:
-[keypair yourclusterkey]
-KEY_LOCATION=~/.ssh/yourclusterkey.rsa
+[keypair myclusterkey]
+KEY_LOCATION=~/.ssh/myclusterkey.rsa
 
 # You can of course have multiple keypair sections
 # [key myotherkey]
@@ -72,7 +72,7 @@ KEY_LOCATION=~/.ssh/yourclusterkey.rsa
 
 [cluster smallcluster]
 # change this to the name of one of the keypair sections defined above
-KEYNAME = yourclusterkey
+KEYNAME = myclusterkey
 
 # number of ec2 instances to launch
 CLUSTER_SIZE = 3
