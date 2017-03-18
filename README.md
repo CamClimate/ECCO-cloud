@@ -69,7 +69,7 @@ tail STDOUT.0000' should show
 ```  
 * Make sure to terminate the cluster once you are done (to stop paying for it!) by typing the following command:
 ```
-starcluster terminate yourfirstcluster
+starcluster terminate myfirstcluster
 ```
 
 Note: distinct cluster name (‘yourfirstcluster’ above) and key name (`yourclusterkey’) may be needed each time
