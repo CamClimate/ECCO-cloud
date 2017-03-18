@@ -31,7 +31,7 @@ vi .starcluster/config
    * replace YOUR_VOLUME_ID with the volume ID corresponding to the EBS volume created from snap-de1b5169 in the first step.
 6. Generate a key pair by typing the follwing command:
 ```
-starcluster createkey yourclusterkey -o ~/.ssh/yourclusterkey.rsa
+starcluster createkey myclusterkey -o ~/.ssh/myclusterkey.rsa
 ```
 7. Create your compute cluster by typing the following command:
 ```
