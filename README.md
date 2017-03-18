@@ -30,11 +30,13 @@ cp ECCO-cloud/config .starcluster/
 ```
 starcluster createkey yourclusterkey -o ~/.ssh/yourclusterkey.rsa
 ```
-* Create the cluster by typing:
-  starcluster start -c smallcluster yourfirstcluster
-* Verify in the AWS EC2 console that cluster is now running (master,node001,...,node00n)
+* Create your compute cluster by typing the following command:
+```
+starcluster start -c smallcluster myfirstcluster
+```
+* Verify in the AWS EC2 console that cluster is now running (master,node001,...,node003)
 * Login to the master node:
-  starcluster sshmaster yourfirstcluster
+  starcluster sshmaster myfirstcluster
 * change directory to the mounted volume:
   cd /mitgcm
 * Compile and setup the ECCO model run for 96 CPUs by following instructions in Fig. 2 of the
