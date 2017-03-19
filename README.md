@@ -46,15 +46,25 @@ starcluster sshmaster myfirstcluster
 ```
 cd /mitgcm
 ```
-11. Compile and setup the ECCO model run for 96 CPUs by typing these commands from Fig. 2 of the
-  eccov4.pdf user guide found at [Forget, G. (2016). ECCO v4 r2 user guide and model setup. Zenodo. http://doi.org/10.5281/zenodo.225777](http://doi.org/10.5281/zenodo.225777)
-12. Switch user to the startcluster associated user sgeadmin by typing the following command:
+11. Compile and setup the ECCO model run for 96 CPUs by typing these commands from Fig. 2 of the eccov4.pdf user guide found at [Forget, G. (2016). ECCO v4 r2 user guide and model setup. Zenodo. http://doi.org/10.5281/zenodo.225777](http://doi.org/10.5281/zenodo.225777):
 ```
-sudo su - sgeadmin
+cd MITgcm/mysetups/ECCO_v4_r2/build/
+../../../tools/genmake2 -mods=../code -optfile ../../../tools/build_options/linux_amd64_gfortran -mpi
+make depend
+make -j 4
+cd ../run
+ln -s ../build/mitgcmuv .
+ln -s ../input/* .
+ln -s ../input_fields/* .
+ln -s ../inputs_baseline2/input*/* .
+ln -s ../forcing_baseline2 .
+```
+12. Switch user to the startcluster associated user "sgeadmin" by typing the following command:
+```
+sudo su sgeadmin
 ```
 13. Run ECCO by typing the following commands:
 ```
-cd /mitgcm/MITgcm/mysetups/ECCO_v4_r2/run
 mpiexec -np 96 -host master,node001,node002 ./mitgcmuv &
 ```
 14. Verify that model is running on master and nodes, e.g., by using the 'top' command
