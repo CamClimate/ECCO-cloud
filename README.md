@@ -46,9 +46,8 @@ starcluster sshmaster myfirstcluster
 ```
 cd /mitgcm
 ```
-11. Compile and setup the ECCO model run for 96 CPUs by following instructions in Fig. 2 of the
-  eccov4.pdf user guide found at http://doi.org/10.5281/zenodo.225777 [Forget, G. (2016). 
-  ECCO v4 r2 user guide and model setup. Zenodo. http://doi.org/10.5281/zenodo.225777]
+11. Compile and setup the ECCO model run for 96 CPUs by typing these commands from Fig. 2 of the
+  eccov4.pdf user guide found at [Forget, G. (2016). ECCO v4 r2 user guide and model setup. Zenodo. http://doi.org/10.5281/zenodo.225777](http://doi.org/10.5281/zenodo.225777)
 12. Switch user to the startcluster associated user sgeadmin by typing the following command:
 ```
 sudo su - sgeadmin
