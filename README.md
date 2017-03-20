@@ -81,7 +81,7 @@ starcluster terminate myfirstcluster
 ```
 17. Your results are still available on the volume created in step 1.  Simply attache the volume to any AWS instance to access the data stored on it.
 
-Note: distinct cluster name (‘myfirstcluster’ above) and key name (`yourclusterkey’) may be needed each time
+Note: distinct cluster name (‘myfirstcluster’ above) and key name (`myclusterkey’) may be needed each time
 
 Note: it is unclear that there is any benefit to running the above software with more than 96 cpu's.
 
