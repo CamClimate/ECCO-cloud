@@ -57,7 +57,7 @@ ln -s ../forcing_baseline2 .
 ```
 11. Switch user to the startcluster associated user "sgeadmin" by typing the following command:
 ```
-sudo su sgeadmin
+su sgeadmin
 ```
 12. Run ECCO by typing the following commands:
 ```
