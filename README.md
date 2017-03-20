@@ -42,13 +42,9 @@ starcluster start -c smallcluster myfirstcluster
 ```
 starcluster sshmaster myfirstcluster
 ```
-10. Change directory to the mounted volume by typing the following command:
+10. Compile and setup the ECCO model run for 96 CPUs by typing these commands from Fig. 2 of the eccov4.pdf user guide found at [Forget, G. (2016). ECCO v4 r2 user guide and model setup. Zenodo. http://doi.org/10.5281/zenodo.225777](http://doi.org/10.5281/zenodo.225777):
 ```
-cd /mitgcm
-```
-11. Compile and setup the ECCO model run for 96 CPUs by typing these commands from Fig. 2 of the eccov4.pdf user guide found at [Forget, G. (2016). ECCO v4 r2 user guide and model setup. Zenodo. http://doi.org/10.5281/zenodo.225777](http://doi.org/10.5281/zenodo.225777):
-```
-cd MITgcm/mysetups/ECCO_v4_r2/build/
+cd /mitgcm/MITgcm/mysetups/ECCO_v4_r2/build/
 ../../../tools/genmake2 -mods=../code -optfile ../../../tools/build_options/linux_amd64_gfortran -mpi
 make depend
 make -j 4
@@ -59,27 +55,27 @@ ln -s ../input_fields/* .
 ln -s ../inputs_baseline2/input*/* .
 ln -s ../forcing_baseline2 .
 ```
-12. Switch user to the startcluster associated user "sgeadmin" by typing the following command:
+11. Switch user to the startcluster associated user "sgeadmin" by typing the following command:
 ```
 sudo su sgeadmin
 ```
-13. Run ECCO by typing the following commands:
+12. Run ECCO by typing the following commands:
 ```
 mpiexec -np 96 -host master,node001,node002 ./mitgcmuv &
 ```
-14. Verify that model is running on master and nodes, e.g., by using the 'top' command
+13. Verify that model is running on master and nodes, e.g., by using the 'top' command
 ```
 top
 ```
-15. Keep track of the model run as it progresses (see how many of the monthly output files exist) by typing the following command:
+14. Keep track of the model run as it progresses (see how many of the monthly output files exist) by typing the following command:
 ```
 ls -1 state_2d_set1.0*data
 ```
-16. By the end of the 20 year model run there should be 240 monthly output files.  Once the model run has completed, verify that STDOUT.0000 ends with 'PROGRAM MAIN: Execution ended Normally' by typing the following command: 
+15. By the end of the 20 year model run there should be 240 monthly output files.  Once the model run has completed, verify that STDOUT.0000 ends with 'PROGRAM MAIN: Execution ended Normally' by typing the following command: 
 ```
 tail STDOUT.0000' should show 
 ```  
-17. Make sure to terminate the cluster once you are done (to stop paying for it!) by typing the following command:
+16. Make sure to terminate the cluster once you are done (to stop paying for it!) by typing the following command:
 ```
 starcluster terminate myfirstcluster
 ```
