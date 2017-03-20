@@ -7,11 +7,11 @@ This repository serves as instructions and pointers to run ECCO in the cloud.  T
 
 Requirements:
 * An AWS account (we will extend to support other cloud services in the future)
-* A machine running starcluster (software found here http://star.mit.edu/cluster/). Below we include instructions for using an AWS t2.micro instance of “Amazon Linux AMI 2016.09.1 (HVM), SSD Volume Type - ami-9be6f38c”.
+* A machine running starcluster (software found here http://star.mit.edu/cluster/). Below we include instructions for using an AWS t2.nano instance of “StarCluster_Ubuntu_16.04_Public - ami-040b6113”.
 
 Intructions:
 1. In your amazon account, create an EBS volume from the public snapshot: snap-0bb98acc10236f81f.  This is a storage volume that contains the software and inputs needed to run ECCO. 
-2. Launch and connect to a t2.micro instance with the Starcluster software in order to launch and terminate your cluster.  (We suggest using the starcluster community AMI with ubuntu 16.04 with id: ami-040b6113.)
+2. Launch and connect to a t2.nano instance with the Starcluster software in order to launch and terminate your cluster.  (We suggest using the starcluster community AMI on ubuntu 16.04 with id: ami-040b6113.)
 3. Download a local copy of the ECCO-cloud repo by typing the following command:
 ```
 git clone https://github.com/CamClimate/ECCO-cloud
@@ -73,12 +73,13 @@ ls -1 state_2d_set1.0*data
 ```
 15. By the end of the 20 year model run there should be 240 monthly output files.  Once the model run has completed, verify that STDOUT.0000 ends with 'PROGRAM MAIN: Execution ended Normally' by typing the following command: 
 ```
-tail STDOUT.0000' should show 
+tail STDOUT.0000' 
 ```  
 16. Make sure to terminate the cluster once you are done (to stop paying for it!) by typing the following command:
 ```
 starcluster terminate myfirstcluster
 ```
+17. Your results are still available on the volume created in step 1.  Simply attache the volume to any AWS instance to access the data stored on it.
 
 Note: distinct cluster name (‘myfirstcluster’ above) and key name (`yourclusterkey’) may be needed each time
 Note: it is unclear that there is any benefit to running the above software with more than 96 cpu's.
