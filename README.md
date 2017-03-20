@@ -10,7 +10,7 @@ Requirements:
 * A machine running starcluster (software found here http://star.mit.edu/cluster/). Below we include instructions for using an AWS t2.micro instance of “Amazon Linux AMI 2016.09.1 (HVM), SSD Volume Type - ami-9be6f38c”.
 
 Intructions:
-1. In your amazon account, create an EBS volume from the public snapshot: snap-de1b5169.  This is a storage volume that contains the software and inputs needed to run ECCO. 
+1. In your amazon account, create an EBS volume from the public snapshot: snap-0bb98acc10236f81f.  This is a storage volume that contains the software and inputs needed to run ECCO. 
 2. Launch and connect to a t2.micro instance with the Starcluster software in order to launch and terminate your cluster.  (We suggest using the starcluster community AMI with ubuntu 16.04 with id: ami-040b6113.)
 3. Download a local copy of the ECCO-cloud repo by typing the following command:
 ```
