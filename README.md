@@ -75,17 +75,18 @@ ls -1 state_2d_set1.0*data
 ```
 tail STDOUT.0000' 
 ```  
-16. Make sure to terminate the cluster once you are done (to stop paying for it!) by typing the following command:
+16. Make sure to terminate the cluster once you are done (to stop paying for it!) by typing the following command from the first instance you created.:
 ```
 starcluster terminate myfirstcluster
 ```
-17. Your results are still available on the volume created in step 1.  Simply attache the volume to any AWS instance to access the data stored on it.
+17.  When you are done with your initial instance, terminate it as well from the AWS website to avoid further charges.  (At the time of this writing, this machine costs ~$5/month in the U.S.)
+18. Your results are still available on the volume created in step 1.  Simply attache the volume to any AWS instance to access the data stored on it.
 
 Note: distinct cluster name (‘myfirstcluster’ above) and key name (`myclusterkey’) may be needed each time
 
 Note: it is unclear that there is any benefit to running the above software with more than 96 cpu's.
 
-If you have questions, feedback, or suggestions--please contact us at (mark at camclimate.org).
+If you have questions, feedback, or suggestions--please contact us at (cloud-support at camclimate.org).
 
 
 
